@@ -19,6 +19,8 @@ Recomiendan usar **type="text/x-handlebars-template"**,( <script id="nombreTempl
 
 `Nota: Se debe pensar en que, si se intenta ejecutar un template Handlebars con Javascript se encontrará con un error, ya que el template está escrito en código HTML. Por ello se coloca un type a la etiqueta Script que el navegador no conozca, de modo que nos aseguremos que no va a intentar ejecutarlo.`
 
+</br>
+
 La otra opción es `usar una llamada a AJAX para traerte los templates`, con la única limitación que se debe sincronizar el retorno de la llamada con la compilación y ejecución de los templates. En otras palabras, `debemos esperar que la llamada a AJAX para traerte el template se ha producido con éxito para poder compilar llas plantillas que vamos a usar en nuestra página.
 
 El código de una plantilla Handlebars tendrá una forma parecida a esta:
