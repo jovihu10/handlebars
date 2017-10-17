@@ -12,7 +12,9 @@ $(function () {
       { firstName: 'Peter', lastName: 'Griffin' },
       { firstName: 'Eric', lastName: 'Cartman' },
       { firstName: 'Kenny', lastName: 'McCormick' },
-      { firstName: 'Bart', lastName: 'Simpson' }
+      { firstName: 'Bart', lastName: 'Simpson' },
+      { age: '23' 
+    }
     ]
   };
 

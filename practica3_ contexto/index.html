@@ -11,11 +11,13 @@
 <script id="example-template" type="text/x-handlebars-template">
 
   <!-- people is looked up on the global context, the one we pass to the compiled template -->
-
+<!-- Aquí pasamos el objeto -->
   {{#each people}}
 
     <!-- Here the context is each individual person. So we can access its properties directly: -->
+    <!-- Aquí pasamos los elementos que queramos que estén dentro del objeto. Nos recorrerá todo el objeto. si tenemos un solo age, nos mostrará solo 1 -->
     <p>{{firstName}} {{lastName}}</p>
+    <p>{{age}}</p>
 
   {{/each}}
 
