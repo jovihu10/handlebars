@@ -15,9 +15,9 @@ La operativa normal con Handlebars es la siguiente:
 
 La forma habitual de almacenar un template será en un bloque de script en el que meteremos un type que no corresponda con ningún otro conocido. 
 
-Nos recomiendan usar type="text/x-handlebars-template",( <script id="nombreTemplate" type="text/x-handlebars-template">) pero en realidad podemos colocar el que queramos. Lo que conseguimos así es que ese script se incluya en el DOM, pero los navegadores no intentarán parsearlo, ni ejecutarlo ni nada de eso.
+Recomiendan usar **type="text/x-handlebars-template"**,( <script id="nombreTemplate" type="text/x-handlebars-template">) pero en realidad podemos colocar el que queramos. Lo que conseguimos así es que ese script se incluya en el DOM, pero los navegadores no intentarán parsearlo, ni ejecutarlo ni nada de eso.
 
-`Nota: Se debe pensar en que, si se intenta ejecutar un template Handlebars con Javascript se encontrará con un error, ya que el template está escrito en código HTML. Por ello se coloca un type a la etiqueta Script que el navegador no conozca, de modo que nos aseguremos que no va a intentar ejecutarlo.
+`Nota: Se debe pensar en que, si se intenta ejecutar un template Handlebars con Javascript se encontrará con un error, ya que el template está escrito en código HTML. Por ello se coloca un type a la etiqueta Script que el navegador no conozca, de modo que nos aseguremos que no va a intentar ejecutarlo.`
 
 La otra opción es `usar una llamada a AJAX para traerte los templates`, con la única limitación que se debe sincronizar el retorno de la llamada con la compilación y ejecución de los templates. En otras palabras, `debemos esperar que la llamada a AJAX para traerte el template se ha producido con éxito para poder compilar llas plantillas que vamos a usar en nuestra página.
 
