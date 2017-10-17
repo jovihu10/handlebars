@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>practica3 plantillas</title>
+</head>
+
+<body>
+<!-- The #each helper iterates over an array of items. -->
+<script id="example-template" type="text/x-handlebars-template">
+
+  <!-- people is looked up on the global context, the one we pass to the compiled template -->
+
+  {{#each people}}
+
+    <!-- Here the context is each individual person. So we can access its properties directly: -->
+    <p>{{firstName}} {{lastName}}</p>
+
+  {{/each}}
+
+</script>
+    
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+   
+
+    <script src="app.js"></script>
+</body>
+
+</html>
