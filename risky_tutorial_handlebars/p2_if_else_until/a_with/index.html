@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Helpers if,else, until</title>
+</head>
+<body>
+	<div id="action"></div>
+	<script type="text/x-handlebars-template" id="index">
+	<!-- ponemos el hash, helper (with) y la propiedad a la que queremos acceder -->
+	{{#with autor }}
+	<h2>{{nombre}}, {{apellidos}}</h2>
+
+
+	<!--Cerramos el helper -->
+	{{/with}}
+	</script>
+	<script type="text/x-handlebars-template" id="index">
+	
+	<!-- El helper if sólo comprueba si es verdadero o falso. Si es verdadero, renderiza el bloque de código que cumple la condicion --> 
+	{{#if autor }}
+	<h2>{{nombre}}, {{apellidos}}</h2>
+
+
+	<!--Cerramos el helper -->
+	{{/if}}
+	</script>
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+	<script type="text/javascript">
+	var template = document.getElementById('index').innerHTML;
+	var compile = Handlebars.compile(template)
+
+	var data = {
+		autor: {
+			nombre: 'Jose',
+			apellidos: 'Mota Hernández'
+		},
+	}
+
+	//a la funciion compile le pasamos data, que es el JSON
+	var compiledHTML = compile(data)
+	document.getElementById('action').innerHTML += compiledHTML
+	</script>
+	
+</body>
+</html>

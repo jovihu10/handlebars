@@ -67,7 +67,66 @@ Ese **HTML** es el que podremos usar más tarde para insertar en la página.
 
 <h3>Primer ejemplo de uso de Handlebars</h3>
 
-Podemos ver ahora un primer ejemplo de uso de HandlebarsJS, en el que se crea una plantilla simple, con este aspecto:
+Podemos ver ahora un primer ejemplo de uso de **HandlebarsJS**, en el que se crea una plantilla simple, con este aspecto:
+
+```html
+<script type="text/x-handlebars-template" id="template">
+{{# each Beers}}
+Name: {{Name}} <br />
+{{/each}}
+</script>
+```
+
+Luego explicaremos las estructuras de control para las plantillas, pero podrás apreciar aquí `una iteración en la que se recorre una estructura llamada "Beers" y se va mostrando su dato "Name"`.
+
+Así nos **traemos el código** de la plantilla:
+
+```javascript
+var stemplate = $("#template").html();
+```
+
+`Nota: aquí ves el método html() de jQuery, pero no quiere decir que Handlebars use jQuery de manera única, lo podemos usar con cualquier librería que deseemos. A lo largo de este ejemplo se usa jQuery diversas veces.`
+
+Luego **compilamos** la plantilla:
+
+```javascript
+var tmpl = Handlebars.compile(stemplate);
+```
+
+Ahora podríamos traernos nuestro **JSON por medio de AJAX**. De nuevo, usaremos la librería que deseemos. Con la cadena JSON recibida simplemente le aplicamos un contexto:
+
+```javascript
+var ctx = {};
+ctx.Beers = data; //data es el JSON que he recibido
+```
+
+Y por fin **ejecutamos nuestra plantilla, enviando ese JSON**.
+
+```javascript
+html = tmpl(ctx);
+```
+
+Acabamos **añadiendo el contenido por medio de cualquier librería** Javascript. En **jQuery** usaríamos unas líneas de código como estas:
+
+```javascript
+$("#content").append(html);
+$("#content").show();
+```
+
+<h2>El JSON que recibo</h2>
+
+Tu `JSON` puede venirte de cualquier lugar, de tu backend, de una Rest-API que te hayas hecho tú mismo o de cualquier "Web Service" que te entregue datos en JSON.
+
+A lo largo de los siguientes ejemplos nuestro JSON será siempre el mismo:
+
+```javascript
+[{"Name":"Estrella","Brewery":"Damm","Style":"Euro Lager","Abv":"5.4","Ibu":"25","Favorite":false,"LastCheckin":{"When":"24/04/2013 - 20:00:01","Drinker":"@eiximenis"}},
+{"Name":"Voll Damm","Brewery":"Damm","Style":"Bock","Abv":"7.2","Ibu":"40","Favorite":false,"LastCheckin":{"When":"24/04/2013 - 21:00:01","Drinker":"@CKGrafico"}},
+{"Name":"Devil's","Brewery":"Marina","Style":"Indian Pale Ale","Abv":"9.0","Ibu":"150","Favorite":true,"LastCheckin":{"When":"24/04/2013 - 22:00:01","Drinker":"@midesweb"}},
+{"Name":"Guinness Draught","Brewery":"Guinness","Style":"Irish Stout","Abv":"4.5","Ibu":"40","Favorite":true,"LastCheckin":{"When":"24/04/2013 - 23:00:01","Drinker":"@eiximenis"}}]
+```
+
+Puedes ver el ejemplo clickando en ejemplo_plantilla
 
 
 

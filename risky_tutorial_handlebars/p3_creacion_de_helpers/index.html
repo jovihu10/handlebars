@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Crear helpers</title>
+</head>
+
+<body>
+    <!--https://www.youtube.com/watch?v=GkllHAP3AE0 -->
+    <div id="action"></div>
+    <script type="text/x-handlebars-template" id="index">
+        {{link_to "contacto" "Página de contacto"}} {{link_to "contacto" "Página de contacto"}}
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script type="text/javascript">
+    /*Con este método generamos un nuevo helper, y recibe dos parámetros. 1-El nombre del helper (en este caso 'link_to')2- Una función que recibirá dos parámetros*/
+
+    var template = document.getElementById('index').innerHTML;
+
+    var compile = HandleBars.compile(template);
+
+    var data = {};
+
+    Handlebars.registerHelper('link_to', function(url,name) {
+        var name = Handlebars.Utils.escapeExpression(name),
+            url = Handlebars.Utils.escapeExpression(url),
+            link = "<a href=\"" + location.protocol + "//" + location.host + "/" + url + "\">" + name + "</a>"
+        return new Handlebars.SafeString(link)
+
+    });
+    var compiledHTML = compile(data);
+    document.getElementById('action').innerHTML += compiledHTML
+    </script>
+</body>
+
+</html>

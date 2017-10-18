@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Helper unless (a menos que)
+    </title>
+</head>
+
+<body>
+    <div id="action"></div>
+    <script type="text/x-handlebars-template" id="index">
+        <!--Each se usa para iterar-->
+        <!--Para cada comentario me vas a mostrar -->
+        {{#each comentarios}}
+        <div>{{autor}}:<em>{{mensaje}}</em></div>
+        <!--Cerramos el helper -->
+        {{/each}}
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script type="text/javascript">
+    var template = document.getElementById('index').innerHTML;
+    var compile = Handlebars.compile(template)
+
+    var data = {
+        comentarios: [{
+                autor: 'Siro',
+                mensaje: 'Hola!'
+            },
+            {
+                autor: 'Pepe',
+                mensaje: 'ey, que tal?'
+            }
+        ]
+    }
+
+    //a la funciion compile le pasamos data, que es el JSON
+    var compiledHTML = compile(data)
+    document.getElementById('action').innerHTML += compiledHTML
+    </script>
+</body>
+
+</html>

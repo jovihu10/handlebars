@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Risky handlebars1</title>
+</head>
+
+<body>
+<div id="action"></div>
+    <script type="text/x-handlebars-template" id="index">
+        <div>Hola me llamo {{ name }}</div>
+    </script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.10/handlebars.min.js"></script>
+    <script type="text/javascript">
+    var template = document.getElementById('index').innerHTML;
+    console.log(template)
+    var compile = Handlebars.compile(template);
+    var compiledHTML = compile({name: 'Joël'})
+    document.getElementById('action').innerHTML += compiledHTML
+
+    </script>
+</body>
+
+</html>
