@@ -9,7 +9,7 @@ handlebars -m "nombre carpeta donde se encuentran las plantillas"
 
 3- Cuando le demos enter veremos las plantillas renderizadas
 
-<img src="https://github.com/jovihu10/handlebars/blob/master/risky_tutorial_handlebars/p4_compilar_templates/img/screen1.png"
+<img src="https://github.com/jovihu10/handlebars/blob/master/risky_tutorial_handlebars/p4_compilar_templates/img/screen1.png">
 
 4- Ahora para guardar esto en un fichero, en terminal ponemos el simbolo > y el nombre del archivo que queremos que cree donde queremos que lo guarde (mayor que). Esto significa que la salida que haya, almacénala en otro ficheroo
 
