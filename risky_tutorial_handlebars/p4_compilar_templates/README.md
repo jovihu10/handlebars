@@ -1,0 +1,1 @@
+Para compilar plantillas en handlebars han de tener extensión .handlebars

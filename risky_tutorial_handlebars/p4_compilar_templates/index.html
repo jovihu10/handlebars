@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Crear helpers</title>
+    <title>compilar templates</title>
 </head>
 
 <body>
@@ -13,6 +13,31 @@
         {{link_to "contacto" "Página de contacto"}}
         {{link_to "usuario/23/siro_diaz" "Página de usuario"}}
     </script>
+    <script type="text/x-handlebars-template" id="user">
+<div>{{name}}, {{surname}}</div>
+    </script>
+
+    <script type="text/x-handlebars-template" id="foo">
+    <ul>
+        {{#each users}}
+        <li>{{username}}</li>
+
+        {{/each}}
+    </ul>
+
+    </script>
+
+
+
+
+
+
+
+
+
+
+
+
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
     <script type="text/javascript">
     var template = document.getElementById('index').innerHTML;
