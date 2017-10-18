@@ -9,53 +9,26 @@
 <body>
     <!--https://www.youtube.com/watch?v=GkllHAP3AE0 -->
     <div id="action"></div>
-    <script type="text/x-handlebars-template" id="index">
-        {{link_to "contacto" "Página de contacto"}}
-        {{link_to "usuario/23/siro_diaz" "Página de usuario"}}
+
+
+     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+     <script type="text/javascript" src="js/templates.js">
     </script>
-    <script type="text/x-handlebars-template" id="user">
-<div>{{name}}, {{surname}}</div>
-    </script>
-
-    <script type="text/x-handlebars-template" id="foo">
-    <ul>
-        {{#each users}}
-        <li>{{username}}</li>
-
-        {{/each}}
-    </ul>
-
-    </script>
-
-
-
-
-
-
-
-
-
-
-
-
-    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+   
     <script type="text/javascript">
-    var template = document.getElementById('index').innerHTML;
+    
+//De esta manera llamamos al template 'user'
+    var template = Handlebars.templates['user'];
 
-    var compile = Handlebars.compile(template);
+    var data = {
+        name: 'Siro',
+        surname: 'Díaz Palazón'
+    };
 
-    var data = {};
-    /*Con este método generamos un nuevo helper, y recibe dos parámetros. 1-El nombre del helper (en este caso 'link_to')2- Una función que recibirá dos parámetros*/
-    Handlebars.registerHelper('link_to', function(url, name) {
-        var name = Handlebars.Utils.escapeExpression(name),
-            url = Handlebars.Utils.escapeExpression(url),
-            link = "<a href=\""+ location.protocol +"//"+ location.host + "/" + url + "\">" + name + "</a>";
-        return new Handlebars.SafeString(link)
-
-    });
-    var compiledHTML = compile(data);
-    document.getElementById('action').innerHTML +=compiledHTML
+    
+    document.getElementById('action').innerHTML += template(data)
     </script>
+    
 </body>
 
 </html>
