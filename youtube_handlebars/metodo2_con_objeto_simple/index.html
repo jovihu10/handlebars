@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>04 Each Helper (para hacer un loop) </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!--https://www.youtube.com/watch?v=DqaYJ4vw82w-->
+    <!--Es lo mismo pero solo usamos el this -->
+    <h1>Game of Thrones</h1>
+    <ul class="character-list-container">
+        <!--Le damos id al script -->
+        <script id="character-template" type="text/x-handlebars-template">
+            {{#each characters}}
+            <li class="character">
+                 <h2>{{this}}</h2>
+            </li>
+            {{/each}}
+        </script>
+    </ul>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>

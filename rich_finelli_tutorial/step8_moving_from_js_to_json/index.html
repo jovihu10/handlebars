@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>08 Moving from JS to JSON </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!--https://www.youtube.com/watch?v=gJVCHy2-nFE-->
+    <h1 class="title">Game of Thrones</h1>
+    <ul class="character-list-container">
+        <!--Le damos id al script -->
+        <script id="character-template" type="text/x-handlebars-template">
+            {{#each characters}}
+            <li class="character">
+                <img src="img/{{shortCode}}.jpg">
+                <h2>{{name}}</h2>
+                <p>Actor: {{actor}}</p>
+                <p>House: {{house}}</p>
+                <!-- Aquí estoy usando el unless como si fuera un else. (el unless es lo invertido del if. Si da falso, hará tal cosa) -->
+                {{#if location}}
+                <p>Whereabouts: {{location}}</p>{{/if}} {{#unless location}}
+                <p>Whereabouts are unknown...</p>
+                {{/unless}}
+            </li>
+            {{/each}}
+        </script>
+    </ul>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+    
+</body>
+
+</html>

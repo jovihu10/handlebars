@@ -24,6 +24,7 @@ habría que poner algo así:
 ```js
 var template = document.getElementById('index').innerHTML;
 var compile = Handlebars.compile(template);
+var compiledHTML = compile(data);
 ```
 
 Sino que **HACEMOS ESTO**
@@ -32,7 +33,7 @@ Sino que **HACEMOS ESTO**
 var template = Handlebars.templates['archivo_que_queremos_renderizar_sin_extension'];
 ```
 
-en el var data, los elementos del objeto han de ir acordes con lo que hay en el template. En este caso `{{name}}` y `{{surname}}`
+en el var data, los elementos del objeto han de ir acordes con lo que hay en el template. En este caso `{{name}}` y `{{surname}}
 en el documentGetElement de abajo le pasamos la funcion template acabada de crear, quedando así
 
 ```js
