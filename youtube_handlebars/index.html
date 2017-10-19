@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Youtube Handlebars</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!--https://www.youtube.com/watch?v=gJVCHy2-nFE-->
+    <h1 class="title">Youtube</h1>
+    <ul class="items-list-container">
+        <!--Le damos id al script -->
+        <script id="items-template" type="text/x-handlebars-template">
+            {{#each data.items}}
+            <li class="item">
+                <!--<img src="img/{{shortCode}}.jpg">-->
+                <h2>Title: {{title}}</h2>
+                <p>id: {{id}}</p>
+                <p>Description: {{description}}</p>
+                <a href={{player.default}}>Player: </a> {{#if duration}}
+                <p>Duration: {{duration}}</p>
+                {{/if}}
+            </li>
+            {{/each}}
+            <div id="others">
+                {{#with data}}
+                <p>Updated: {{items.value}}</p>
+                {{/with}}
+            </div>
+        </script>
+    </ul>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+
+</html>
